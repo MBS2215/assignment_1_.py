@@ -53,9 +53,7 @@ def CheckArithmeticSeries(Number) :
 
     while int(Number) != 0:
 
-        left = int((Number % 10))
-        right =  int(int(Number/ 10) % 10)
-        x = int(int((Number % 10))-int(((int(Number)) / 10) % 10)) == dist
+   
         if int(Number) < 10:
             Number = int(Number) / 10
         elif int((Number % 10))-int(int(Number/ 10) % 10) == dist:
