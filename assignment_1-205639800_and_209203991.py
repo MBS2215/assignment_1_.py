@@ -37,8 +37,7 @@ def RemoveMinDigit(Number):
 
 
 
-x = input('please enter number:\n')
-print(RemoveMinDigit(int(x)))
+
 '----------------------------------------------------'
 'question 3'
 
@@ -62,8 +61,7 @@ def CheckArithmeticSeries(Number) :
     return True
 
 
-x=input('enter number:\n ')
-print('the answer is:'+ str(CheckArithmeticSeries(int(x))))
+
 '----------------------------------------------------'
 'question 5'
 
@@ -81,11 +79,6 @@ def CanBeTriangle(num1,num2,num3):
         return True
     except:
         print('bad input!!\n')
-
-x=input('num1= ')
-y=input('\nnum2= ')
-z=input('\nnum3= ')
-print(str(CanBeTriangle(x,y,z)))
 
 '----------------------------------------------------'
 '----------------------------------------------------'
