@@ -47,17 +47,29 @@ print(RemoveMinDigit(int(x)))
 '----------------------------------------------------'
 'question 4'
 def CheckArithmeticSeries(Number) :
-    if Number == 0:
-        return  False
+
     Number = int(Number)
     dist = int((Number % 10))-int(((int(Number) / 10) % 10)) #(n+1)-(n)
+
     while int(Number) != 0:
-        if int((Number % 10))-int(((int(Number) / 10) % 10)) == dist:
-            Number =int(Number) / 10
+
+        left = int((Number % 10))
+        right =  int(int(Number/ 10) % 10)
+        x = int(int((Number % 10))-int(((int(Number)) / 10) % 10)) == dist
+        if int(Number) < 10:
+            Number = int(Number) / 10
+        elif int((Number % 10))-int(int(Number/ 10) % 10) == dist:
+            Number= int(Number)/10
         else:
             return False
-
     return True
+
+
+
+
+
+
+
 
 x=input('enter number:\n ')
 print('the answer is:'+ str(CheckArithmeticSeries(int(x))))
