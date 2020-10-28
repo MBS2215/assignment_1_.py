@@ -53,7 +53,6 @@ def CheckArithmeticSeries(Number) :
 
     while int(Number) != 0:
 
-   
         if int(Number) < 10:
             Number = int(Number) / 10
         elif int((Number % 10))-int(int(Number/ 10) % 10) == dist:
@@ -63,14 +62,30 @@ def CheckArithmeticSeries(Number) :
     return True
 
 
-
-
-
-
-
-
 x=input('enter number:\n ')
 print('the answer is:'+ str(CheckArithmeticSeries(int(x))))
 '----------------------------------------------------'
+'question 5'
+
+
+def CanBeTriangle(num1,num2,num3):
+    try:
+        if float(num1) < 0 or float(num2) < 0 or float(num3) < 0:
+            return False
+        if float(num1) + float(num2) <float(num3):
+            return False
+        if float(num1) + float(num3) <float(num2):
+            return False
+        if float(num3) + float(num2) <float(num1):
+            return False
+        return True
+    except:
+        print('bad input!!\n')
+
+x=input('num1= ')
+y=input('\nnum2= ')
+z=input('\nnum3= ')
+print(str(CanBeTriangle(x,y,z)))
+
 '----------------------------------------------------'
 '----------------------------------------------------'
