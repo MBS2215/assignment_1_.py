@@ -107,3 +107,15 @@ def CalcUpperCalcLower(string):
 
 
 '----------------------------------------------------'
+'question 7'
+
+def PerfectNumber(number):
+    sum = 0 #Save the sum of all the divisors of the number
+
+    for chk_num in range(1, number):
+        if (number % chk_num) == 0:
+            sum += chk_num
+    if number == sum:
+        return True
+    return False
+'----------------------------------------------------'
