@@ -119,3 +119,25 @@ def PerfectNumber(number):
         return True
     return False
 '----------------------------------------------------'
+'question 8'
+def IsPangrams(string):
+    end_list = '\0'
+    latter_diff = ord('a')-ord('A')# using for check other case
+    latter_list = [] #for save the letters in the string , capital or lower and not capital and lower
+    counter_list = 0 # for count the number of letter we save if we rich to 26 its pandrom
+    for index in range(len(string)):
+        lower = ord(string[index]) >= ord('a') and ord(string[index]) <= ord('z')# if true its lower-case letter
+        capital = ord(string[index]) >= ord('A') and ord(string[index]) <= ord('Z')# if true its capital letter
+
+        if lower:
+            if value_in_list(string[index], latter_list) == False and value_in_list(chr(ord(string[index] )- latter_diff), latter_list) == False:
+                    latter_list.insert(0, string[index])
+                    counter_list += 1
+        if capital:
+            if value_in_list(string[index], latter_list) == False and value_in_list(chr(ord(string[index]) + latter_diff), latter_list) == False:
+                    latter_list.insert(0, string[index])
+                    counter_list += 1
+
+    if counter_list == 26:
+        return True
+
