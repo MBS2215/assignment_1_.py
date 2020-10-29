@@ -5,17 +5,17 @@
 def XNor(first_bol,sec_bol) :
     if first_bol==sec_bol:
         return True
-    return False
+    else:
+        return False
 
 '----------------------------------------------------'
 'question 2'
-
 def MinFinder(user_value):
     minimum = user_value % 10
     while user_value != 0:
         if (user_value % 10 ) < minimum:
             minimum = user_value % 10
-        user_value = int(user_value/10)
+        user_value = user_value//10
     return minimum
 
 def RemoveMinDigit(Number):
@@ -32,7 +32,7 @@ def RemoveMinDigit(Number):
             if Number % 10 != min_num:
                 new_number = new_number + int((Number % 10 * counter))
                 counter = counter * 10
-            Number = int(Number / 10)
+            Number = Number // 10
     return int(new_number)
 
 
@@ -47,19 +47,18 @@ def RemoveMinDigit(Number):
 'question 4'
 def CheckArithmeticSeries(Number) :
 
-    Number = int(Number)
-    dist = int((Number % 10))-int(((int(Number) / 10) % 10)) #(n+1)-(n)
+
+    dist = Number % 10- (Number // 10) % 10 #(n+1)-(n)
 
     while int(Number) != 0:
 
         if int(Number) < 10:
             Number = int(Number) / 10
-        elif int((Number % 10))-int(int(Number/ 10) % 10) == dist:
-            Number= int(Number)/10
+        elif int((Number % 10))-(Number// 10) % 10 == dist:
+            Number= Number//10
         else:
             return False
     return True
-
 
 
 '----------------------------------------------------'
@@ -81,4 +80,30 @@ def CanBeTriangle(num1,num2,num3):
         print('bad input!!\n')
 
 '----------------------------------------------------'
+'question 6'
+
+def num_of_upper(string):
+
+    counter = 0
+    for index in range(len(string)):
+        if ord(string[index]) >= ord('A') and ord(string[index]) <= ord('Z'):
+            counter += 1
+
+    return counter
+
+def num_of_lower(string):
+
+    counter = 0
+    for index in range(len(str(string))):
+        if ord(string[index]) >= ord('a') and ord(string[index]) <= ord('z'):
+            counter += 1
+
+    return counter
+
+
+def CalcUpperCalcLower(string):
+    print('Number of Upper cases: '+ str(num_of_upper(string)))
+    print('Number of Lower cases: '+ str(num_of_lower(string)))
+
+
 '----------------------------------------------------'
