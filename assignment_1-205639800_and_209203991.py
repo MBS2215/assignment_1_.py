@@ -41,6 +41,11 @@ def RemoveMinDigit(Number):
 '----------------------------------------------------'
 'question 3'
 
+def SquareArea(α,γ,a,b,c,d):
+    s = (a+b+c+d)*0.5
+    α = radians(α)
+    γ = radians(γ)
+    return sqrt((s-a)*(s-b)*(s-c)*(s-d)-0.5*a*b*c*d*(1+cos(α+γ)))
 
 
 '----------------------------------------------------'
