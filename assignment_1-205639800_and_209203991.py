@@ -11,11 +11,11 @@ def XNor(first_bol,sec_bol) :
 '----------------------------------------------------'
 'question 2'
 def MinFinder(user_value):
-    minimum = user_value % 10
+    minimum = user_value % 10 #save the first number as minimum number
     while user_value != 0:
-        if (user_value % 10 ) < minimum:
-            minimum = user_value % 10
-        user_value = user_value//10
+        if (user_value % 10 ) < minimum:# if true , save the new minimum number 
+            minimum = user_value % 10 #save new number 
+        user_value = user_value//10 # for check the next digit 
     return minimum
 
 def RemoveMinDigit(Number):
@@ -24,13 +24,12 @@ def RemoveMinDigit(Number):
     if Number % 1 != 0:
         print("bad input!!, not a integer number\n")
         return
-    min_num = MinFinder(Number)
-    print('min is ' + str(min_num)+' \n')
+    min_num = MinFinder(Number) 
     new_number = 0
-    counter = 1
+    counter = 1 #for save the position
     while Number != 0:
             if Number % 10 != min_num:
-                new_number = new_number + int((Number % 10 * counter))
+                new_number = new_number + int((Number % 10 * counter)) #add new digit 
                 counter = counter * 10
             Number = Number // 10
     return int(new_number)
@@ -42,9 +41,9 @@ def RemoveMinDigit(Number):
 'question 3'
 
 def SquareArea(α,γ,a,b,c,d):
-    s = (a+b+c+d)*0.5
-    α = radians(α)
-    γ = radians(γ)
+    s = (a+b+c+d)*0.5 #half Scope
+    α = radians(α) #degree to rad
+    γ = radians(γ) #degree to rad
     return sqrt((s-a)*(s-b)*(s-c)*(s-d)-0.5*a*b*c*d*(1+cos(α+γ)))
 
 
@@ -53,13 +52,13 @@ def SquareArea(α,γ,a,b,c,d):
 def CheckArithmeticSeries(Number) :
 
 
-    dist = Number % 10- (Number // 10) % 10 #(n+1)-(n)
+    difference = Number % 10- (Number // 10) % 10 #(n+1)-(n)
 
     while int(Number) != 0:
 
         if int(Number) < 10:
             Number = int(Number) / 10
-        elif int((Number % 10))-(Number// 10) % 10 == dist:
+        elif int((Number % 10))-(Number// 10) % 10 == difference:
             Number= Number//10
         else:
             return False
@@ -89,19 +88,19 @@ def CanBeTriangle(num1,num2,num3):
 
 def num_of_upper(string):
 
-    counter = 0
+    counter = 0 # for count the capital letters in string
     for index in range(len(string)):
-        if ord(string[index]) >= ord('A') and ord(string[index]) <= ord('Z'):
-            counter += 1
+        if ord(string[index]) >= ord('A') and ord(string[index]) <= ord('Z'): #uf true its capital
+            counter += 1 #count the letter 
 
     return counter
 
 def num_of_lower(string):
 
-    counter = 0
+    counter = 0 # for count the lower case letters in string
     for index in range(len(str(string))):
-        if ord(string[index]) >= ord('a') and ord(string[index]) <= ord('z'):
-            counter += 1
+        if ord(string[index]) >= ord('a') and ord(string[index]) <= ord('z'): #if true its lower case letter in string
+            counter += 1 #count the letter 
 
     return counter
 
